@@ -52,7 +52,7 @@ else
   if [[ ${prompt,,} =~ ^(y|yes)$ ]]; then
     msg_info "Installing Portainer agent $PORTAINER_AGENT_LATEST_VERSION"
     $STD docker run -d \
-      -p 9001:9001 \
+      -p 9000:9000 \
       --name portainer_agent \
       --restart=always \
       -v /var/run/docker.sock:/var/run/docker.sock \
