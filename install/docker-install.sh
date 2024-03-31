@@ -40,6 +40,7 @@ if [[ ${prompt,,} =~ ^(y|yes)$ ]]; then
   msg_info "Installing Portainer $PORTAINER_LATEST_VERSION"
   docker volume create portainer_data >/dev/null
   $STD docker run -d \
+    -p 8000:8000 \
     -p 9000:9000 \
     --name=portainer \
     --restart=always \
